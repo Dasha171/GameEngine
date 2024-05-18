@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GameEngine.ProfilPage">
+    <StackLayout  BackgroundColor="#1B181C" >
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="280"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <!-- левое меню -->
+            <Frame IsVisible="true" Grid.Column="0"  BackgroundColor="#1B181C" HeightRequest="800">
+                <Grid HorizontalOptions="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="150" />
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="900" />
+                    </Grid.RowDefinitions>
+                    <Border WidthRequest="100" HeightRequest="100" StrokeShape="RoundRectangle 50" Grid.Row="0" >
+                    <Image Source="profil.jpg" />
+                </Border>
+                    <Label Text="Ябс Дарья" Grid.Row="1" TextColor="White" FontSize="20" HorizontalOptions="Center"/>
+                    <Button Clicked="Button_Clicked" HeightRequest="10" HorizontalOptions="Center" Text="Редактировать профиль" Grid.Row="2" TextColor="White" FontSize="15" BorderWidth="1" BackgroundColor="#1B181C"/>
+                </Grid>
+            </Frame>
+            <!-- правое меню -->
+            <StackLayout Grid.Column="1" Margin="30,20,0,0" IsVisible="true">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="200"/>
+                    </Grid.ColumnDefinitions>
+                    <Picker x:Name="languagePicker1" WidthRequest="150" HorizontalOptions="Start" Grid.Column="0" >
+                        <Picker.Items>
+                                <x:String>День</x:String>
+                                <x:String>Неделя</x:String>
+                                <x:String>Месяц</x:String>
+                                <x:String>Год</x:String>
+                            </Picker.Items>
+                    </Picker>
+                    <Picker x:Name="languagePicker2" WidthRequest="150" HorizontalOptions="Start" Grid.Column="1">
+                        <Picker.Items>
+                            <x:String>Прогресс</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Picker x:Name="languagePicker3" WidthRequest="150" HorizontalOptions="Start" Grid.Column="2">
+                        <Picker.Items>
+                            <x:String>Закрепленные</x:String>
+                            <x:String>Запланировано</x:String>  
+                        </Picker.Items>
+                    </Picker>
+                </Grid>
+            </StackLayout>
+        </Grid>
+    </StackLayout>
+</ContentPage>
